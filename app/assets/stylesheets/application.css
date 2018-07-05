@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+body{
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  background-color: #ffe;
+}
+
+#title{
+   width: 1000px;
+   margin: 0 auto;
+ }
+
+#blog_image{
+  height: 400px;
+  width: 1000px;
+  position: relative;
+}
+
+#blog_image:hover{
+  text-decoration: none;
+}
+
+#blog_title{
+  color: #ffc;
+  font-size: 40px;
+  position: absolute;
+  top: 200px;
+  left: 234px;
+  text-shadow: 2px 2px 1px #666,
+  -2px 2px 1px #666,
+  2px -2px 1px #666,
+  -2px -2px 1px #666;
+}

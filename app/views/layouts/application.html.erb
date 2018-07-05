@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UsagiBlog</title>
+    <title>ウサギのふーの部屋</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <div id="title">
+      <%= link_to image_tag("title.jpg", {:id => "blog_image"}), new_article_path %>
+      <div id="blog_title">
+        <h1>
+          <%= link_to "ウサギのふーの部屋", root_path %>
+        </h1>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
