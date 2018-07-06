@@ -14,14 +14,16 @@
  *= require_self
  */
 body{
-  /* font-family: Verdana, sans-serif;
-  font-size: 14px; */
   background-color: #ffe;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+li{
+  list-style: none;
 }
 
 /* title */
@@ -34,17 +36,13 @@ body{
 #blog_image{
   height: 400px;
   width: 1000px;
-  position: relative;
 }
 
-#blog_image:hover{
-  text-decoration: none;
-}
-
-#blog_title{
+/* #blog_title {
   position: absolute;
   top: 200px;
-  left: 270px;
+  left: 200px;
+  right: auto;
   text-shadow: 2px 2px 1px #666,
   -2px 2px 1px #666,
   2px -2px 1px #666,
@@ -59,6 +57,34 @@ body{
 
 #blog_title h1{
   font-size: 80px;
-}
+} */
 
 /* header */
+
+header{
+  height: 60px;
+  width: 1001px;
+  background-color: #ff6;
+  margin: 0 auto;
+}
+
+#header{
+  font-size: 30px;
+  line-height: 60px;
+}
+
+#header a:-webkit-any-link {
+  color: #666;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header_btn a{
+  padding: 0 62px;
+  float: left;
+}
+
+.header_btn a:hover{
+  opacity: 0.8;
+  background-color: #ffc;
+}
