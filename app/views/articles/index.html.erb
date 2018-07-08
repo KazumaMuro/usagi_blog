@@ -1,27 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="main">
+  <div class="side_bar">
+    <%= image_tag "profile.jpg",
+    :class => "profile_image", :alt => "ふーの写真",
+    :height => 250, :width => 250 %>
+    <div class="profile">
+      <h6>プロフィール</h6>
+      <p>ネザーランドドワーフのふー</p>
+      <p>0歳の◯◯子です</p>
+    </div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <!-- <td><%= article.text %></td> -->
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="new">
+      <h4>新着記事</h4>
+      <p>新しい記事が五件並ぶよ</p>
+      <p>新しい記事が五件並ぶよ</p>
+      <p>新しい記事が五件並ぶよ</p>
+      <p>新しい記事が五件並ぶよ</p>
+      <p>新しい記事が五件並ぶよ</p>
+    </div>
+  </div>
 
+  <div id="main_list">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Text</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <!-- <td><%= article.text %></td> -->
+            <td><%= link_to 'Show', article %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
+
 
 <%= link_to 'New Article', new_article_path %>

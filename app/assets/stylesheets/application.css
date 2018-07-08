@@ -18,7 +18,7 @@ body{
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 18px;
 }
 
@@ -87,4 +87,56 @@ header{
 .header_btn a:hover{
   opacity: 0.8;
   background-color: #ffc;
+}
+
+/* main */
+
+#main{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* side_bar */
+
+.side_bar{
+  width: 300px;
+  height: 2000px;
+  float: right;
+  border-left: 2px solid #fc6;
+}
+
+.profile_image{
+  margin: 25px;
+}
+
+.profile{
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.profile h6{
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.new{
+  text-align: center;
+}
+
+.new h4{
+  font-size: 35px;
+  margin-top: 0;
+}
+
+
+
+
+
+/* main_list */
+
+#main_list{
+  width: 700px
+  height: auto;
+  float: left;
 }
