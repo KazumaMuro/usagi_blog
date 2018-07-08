@@ -92,7 +92,7 @@ header{
 /* main */
 
 #main{
-  width: 1000px;
+  width: 1002px;
   margin: 0 auto;
 }
 
@@ -129,14 +129,34 @@ header{
   margin-top: 0;
 }
 
-
-
-
-
 /* main_list */
 
 #main_list{
-  width: 700px
+  width: 700px;
   height: auto;
-  float: left;
+}
+
+#content{
+  padding-bottom: 50px;
+  border-bottom: 2px solid #fc9;
+}
+
+#picture{
+  height: 200px;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+#title{
+  font-size: 30px;
+  margin-left: 30px;
+}
+
+#title a:-webkit-any-link {
+    color: #fc0;
+    cursor: pointer;
+    text-decoration: none;
 }

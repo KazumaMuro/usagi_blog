@@ -22,27 +22,19 @@
   </div>
 
   <div id="main_list">
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Text</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+    <% @articles.each do |article| %>
+    <div id="content">
+      <div id="picture">
+        <%= image_tag article.picture.url %>
+      </div>
+      <div id="title">
+        <%= link_to article.title, article %>
+      </div>
+    </div>
+        <!-- <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %> -->
 
-      <tbody>
-        <% @articles.each do |article| %>
-          <tr>
-            <td><%= article.title %></td>
-            <!-- <td><%= article.text %></td> -->
-            <td><%= link_to 'Show', article %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
         <% end %>
-      </tbody>
-    </table>
   </div>
 </div>
 <br>
