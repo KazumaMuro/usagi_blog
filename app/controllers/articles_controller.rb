@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @articles = Article.order(created_at: :desc).page(params[:page]).limit(5)
   end
 
   # GET /articles/new

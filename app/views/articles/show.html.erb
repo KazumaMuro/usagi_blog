@@ -1,14 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="main">
+  <div class="side_bar">
+    <%= image_tag "profile.jpg",
+    :class => "profile_image", :alt => "ふーの写真",
+    :height => 250, :width => 250 %>
+    <div class="profile">
+      <h6>プロフィール</h6>
+      <p>ネザーランドドワーフのふー</p>
+      <p>0歳の◯◯子です</p>
+    </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+    <div class="new">
+      <h4>新着記事</h4>
+      <% @articles.each do |article| %>
+      <div class="new_content">
+        <div class="new_picture">
+          <%= image_tag article.picture.url %>
+        </div>
+        <div class="new_title">
+          <%= link_to article.title, article %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="article">
+    <div id="article_title">
+      <%= @article.title %>
+    </div>
+    <div id="article_text">
+      <%= @article.text %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

@@ -92,7 +92,7 @@ header{
 
 /* main */
 
-#main{
+.main{
   width: 1002px;
   margin: 0 auto;
 }
@@ -208,4 +208,26 @@ header{
   margin: 2px;
   border: 1px solid #fc6;
   color: #666;
+}
+
+/* article */
+
+#article{
+  width: 700px;
+  height: auto;
+}
+
+#article_title{
+  font-size: 50px;
+  color: #fc6;
+  padding: 50px 10px;
+  border-bottom: 2px solid #fc9;
+}
+
+#article_text{
+  font-size: 25px;
+  font-weight: 100;
+  line-height: 35px;
+  letter-spacing: 0.5px;
+  padding: 20px;
 }
