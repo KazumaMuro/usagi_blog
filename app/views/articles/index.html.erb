@@ -13,11 +13,16 @@
 
     <div class="new">
       <h4>新着記事</h4>
-      <p>新しい記事が五件並ぶよ</p>
-      <p>新しい記事が五件並ぶよ</p>
-      <p>新しい記事が五件並ぶよ</p>
-      <p>新しい記事が五件並ぶよ</p>
-      <p>新しい記事が五件並ぶよ</p>
+      <% @articles.each do |article| %>
+      <div class="new_content">
+        <div class="new_picture">
+          <%= image_tag article.picture.url %>
+        </div>
+        <div class="new_title">
+          <%= link_to article.title, article %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 
@@ -34,7 +39,8 @@
         <!-- <%= link_to 'Edit', edit_article_path(article) %>
         <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %> -->
 
-        <% end %>
+    <% end %>
+    <%= will_paginate @articles,  {:class => 'pagination', :previous_label => '前へ', :next_label => '次へ' } %>
   </div>
 </div>
 <br>
