@@ -36,8 +36,11 @@
         <%= link_to article.title, article %>
       </div>
     </div>
-        <%= link_to 'Edit', edit_article_path(article) %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% if @current_user %>
+      <%= link_to 'Edit', edit_article_path(article) %>
+      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
 
     <% end %>
     <%= will_paginate @articles,  {:class => 'pagination', :previous_label => '前へ', :next_label => '次へ'} %>
@@ -45,5 +48,9 @@
 </div>
 <br>
 
+<% if @current_user %>
+  <%= link_to 'New Article', new_article_path %>
+  <%= link_to"ログアウト", "/logout", {method: :post} %>
+<% end %>
 
-<%= link_to 'New Article', new_article_path %>
+<li class="login"><%= link_to "ログイン", "/login" %></li>

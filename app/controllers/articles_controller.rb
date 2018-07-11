@@ -1,12 +1,16 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :last_article, only: [:index, :show, :new, :edit]
+  before_action :header_article, only: [:index, :show, :new, :edit, :login_form]
+
+  before_action :set_current_user
+  before_action :authenticate_user, only: [:new, :edit]
 
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.order(created_at: :desc).page(params[:page]).per_page(5)
     @new_articles = Article.order(created_at: :desc).limit(5)
+    @user = User.all
   end
 
   # GET /articles/1
@@ -22,6 +26,26 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+  end
+
+  # login
+  
+  def login_form
+  end
+
+  def login
+    @user = User.find_by(name: params[:name], password: params[:password])
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/")
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/login")
   end
 
   # POST /articles
@@ -69,9 +93,20 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def last_article
+    def header_article
+      @first = Article.first
       @last = Article.last
     end
+
+    def set_current_user
+    @current_user = User.find_by(id: session[:user_id])
+  end
+
+  def authenticate_user
+    if @current_user == nil
+      redirect_to("/")
+    end
+  end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.

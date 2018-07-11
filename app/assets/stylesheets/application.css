@@ -195,6 +195,10 @@ header{
   color: #666;
 }
 
+.login a{
+  /* color: #ffe; */
+}
+
 /* article */
 
 #article{
