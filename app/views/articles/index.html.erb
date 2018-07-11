@@ -13,13 +13,13 @@
 
     <div class="new">
       <h4>新着記事</h4>
-      <% @articles.each do |article| %>
+      <% @new_articles.each do |new_article| %>
       <div class="new_content">
         <div class="new_picture">
-          <%= image_tag article.picture.url %>
+          <%= image_tag new_article.picture.url, :size => "150x150" %>
         </div>
         <div class="new_title">
-          <%= link_to article.title, article %>
+          <%= link_to new_article.title, "/articles/#{new_article.id}" %>
         </div>
       </div>
       <% end %>
@@ -30,17 +30,17 @@
     <% @articles.each do |article| %>
     <div id="content">
       <div id="picture">
-        <%= image_tag article.picture.url %>
+        <%= image_tag article.picture.url, :size => "300x200" %>
       </div>
       <div id="title">
         <%= link_to article.title, article %>
       </div>
     </div>
-        <!-- <%= link_to 'Edit', edit_article_path(article) %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <% end %>
-    <%= will_paginate @articles,  {:class => 'pagination', :previous_label => '前へ', :next_label => '次へ' } %>
+    <%= will_paginate @articles,  {:class => 'pagination', :previous_label => '前へ', :next_label => '次へ'} %>
   </div>
 </div>
 <br>

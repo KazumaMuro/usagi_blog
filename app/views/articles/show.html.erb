@@ -16,7 +16,7 @@
       <% @articles.each do |article| %>
       <div class="new_content">
         <div class="new_picture">
-          <%= image_tag article.picture.url %>
+          <%= image_tag article.picture.url, :size => "150x150"  %>
         </div>
         <div class="new_title">
           <%= link_to article.title, article %>

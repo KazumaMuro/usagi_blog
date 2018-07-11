@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <div id="title">
+    <div id="main_title">
       <%= link_to image_tag("title.jpg", {:id => "blog_image", :alt => "ウサギのふーの部屋"}), root_path %>
     </div>
 
     <header>
       <div id="header">
         <li class="header_btn"><%= link_to "home", root_path %></li>
-        <li class="header_btn"><%= link_to "最新記事", "#" %></li>
+        <li class="header_btn"><%= link_to "最新記事", "/articles/#{@last.id}" %></li>
         <li class="header_btn"><%= link_to "画像一覧", "#" %></li>
         <li class="header_btn"><%= link_to "プロフィール", "#" %></li>
       </div>

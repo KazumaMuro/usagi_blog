@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :last_article, only: [:index, :show, :new, :edit]
 
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.order(created_at: :desc).page(params[:page]).per_page(5)
+    @new_articles = Article.order(created_at: :desc).limit(5)
   end
 
   # GET /articles/1
@@ -67,6 +68,11 @@ class ArticlesController < ApplicationController
     def set_article
       @article = Article.find(params[:id])
     end
+
+    def last_article
+      @last = Article.last
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
