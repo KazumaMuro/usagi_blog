@@ -29,12 +29,12 @@ class ArticlesController < ApplicationController
   end
 
   # login
-  
+
   def login_form
   end
 
   def login
-    @user = User.find_by(name: params[:name], password: params[:password])
+    @user = User.find_by(name: params[:name], password_digest: params[:password])
     if @user
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"

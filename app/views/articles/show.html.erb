@@ -29,6 +29,7 @@
   <div id="article">
     <div id="article_title">
       <%= @article.title %>
+      <p class = "time"><%= @article.created_at.to_s %></p>
     </div>
     <div id="article_text">
       <%= @article.text %>
