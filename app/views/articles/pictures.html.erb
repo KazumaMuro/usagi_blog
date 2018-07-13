@@ -1,0 +1,6 @@
+<div id="pictures">
+<% @articles.each do |article| %>
+  <div class="box"><%= image_tag(article.picture.url, :size => "300x300") %></div>
+<% end %>
+<%= will_paginate @articles,  {:class => 'pagination', :previous_label => '前へ', :next_label => '次へ'} %>
+</div>

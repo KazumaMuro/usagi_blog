@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
 body{
   background-color: #ffe;
   color: #333;
@@ -225,4 +227,17 @@ header{
   line-height: 35px;
   letter-spacing: 0.5px;
   padding: 20px;
+}
+
+/* pictures */
+
+#pictures{
+  width: 996px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.box{
+  float: left;
+  padding: 16px;
 }

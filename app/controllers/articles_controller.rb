@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :header_article, only: [:index, :show, :new, :edit, :login_form]
+  before_action :header_article, only: [:index, :show, :new, :edit, :login_form, :pictures]
 
   before_action :set_current_user
   before_action :authenticate_user, only: [:new, :edit]
@@ -26,6 +26,10 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+  end
+
+  def pictures
+    @articles = Article.order(created_at: :desc).page(params[:page]).per_page(9)
   end
 
   # login
