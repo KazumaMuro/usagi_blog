@@ -16,7 +16,7 @@
       <% @articles.each do |article| %>
       <div class="new_content">
         <div class="new_picture">
-          <%= image_tag article.picture.url, :size => "150x150"  %>
+          <%= image_tag article.picture.url, :size => "150x150" %>
         </div>
         <div class="new_title">
           <%= link_to article.title, article %>
@@ -31,9 +31,15 @@
       <%= @article.title %>
       <p class = "time"><%= @article.created_at.to_s %></p>
     </div>
+    <div id="article_picture">
+      <%= image_tag @article.picture.url, :size => "600x450" %>
+    </div>
     <div id="article_text">
       <%= @article.text %>
     </div>
+    <%= link_to '前へ', "/articles/#{@before_article.id}" %>
+    <%= link_to '後へ', "/articles/#{@next_article.id}" %>
+
   </div>
 </div>
 

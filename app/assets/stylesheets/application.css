@@ -221,6 +221,11 @@ header{
   color: #666;
 }
 
+#article_picture{
+  text-align: center;
+  padding: 50px;
+}
+
 #article_text{
   font-size: 25px;
   font-weight: 100;

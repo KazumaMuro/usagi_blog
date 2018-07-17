@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  require "article.rb"
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :header_article, only: [:index, :show, :new, :edit, :login_form, :pictures]
 
@@ -17,7 +18,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @articles = Article.order(created_at: :desc).page(params[:page]).limit(5)
+    @before_article = Article.order(created_at: :desc).first
+    @next_article = Article.order(created_at: :asc).first
   end
+
 
   # GET /articles/new
   def new
@@ -31,6 +35,7 @@ class ArticlesController < ApplicationController
   def pictures
     @articles = Article.order(created_at: :desc).page(params[:page]).per_page(9)
   end
+
 
   # login
 
