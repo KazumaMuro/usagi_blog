@@ -198,7 +198,8 @@ header{
 }
 
 .login a{
-  /* color: #ffe; */
+  color: #ffe;
+  float: right;
 }
 
 /* article */
@@ -232,6 +233,35 @@ header{
   line-height: 35px;
   letter-spacing: 0.5px;
   padding: 20px;
+}
+
+.show_btn{
+  font-size: 38px;
+  padding-top: 80px;
+}
+
+.show_btn a{
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #666;
+  text-decoration: none;
+  color: #fc3;
+}
+
+.show_btn a:hover{
+  border: 1px dashed #666;
+  color: #666;
+  background-color: #fc6;
+}
+
+.before{
+  float: left;
+  padding-left: 80px;
+}
+
+.next{
+  float: right;
+  padding-right: 80px;
 }
 
 /* pictures */
