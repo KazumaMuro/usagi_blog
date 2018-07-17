@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
   require "article.rb"
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :header_article, only: [:index, :show, :new, :edit, :login_form, :pictures]
+  # before_action :header_article, only: [:index, :show, :new, :edit, :login_form, :pictures]
 
   before_action :set_current_user
-  before_action :authenticate_user, only: [:new, :edit]
+  # before_action :authenticate_user, only: [:new, :edit]
 
   # GET /articles
   # GET /articles.json
@@ -102,20 +102,20 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def header_article
-      @first = Article.first
-      @last = Article.last
-    end
+    # def header_article
+    #   @first = Article.first
+    #   @last = Article.last
+    # end
 
     def set_current_user
     @current_user = User.find_by(id: session[:user_id])
   end
 
-  def authenticate_user
-    if @current_user == nil
-      redirect_to("/")
-    end
-  end
+  # def authenticate_user
+  #   if @current_user == nil
+  #     redirect_to("/")
+  #   end
+  # end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.

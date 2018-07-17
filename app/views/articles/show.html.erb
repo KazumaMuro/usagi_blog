@@ -32,7 +32,7 @@
       <p class = "time"><%= @article.created_at.to_s %></p>
     </div>
     <div id="article_picture">
-      <%= image_tag @article.picture.url, :size => "600x450" %>
+      <%= image_tag @article.picture.to_s, :size => "600x450" %>
     </div>
     <div id="article_text">
       <%= @article.text %>

@@ -16,7 +16,7 @@
       <% @new_articles.each do |new_article| %>
       <div class="new_content">
         <div class="new_picture">
-          <%= image_tag new_article.picture.url, :size => "150x150" %>
+          <%= image_tag new_article.picture.to_s, :size => "150x150" %>
         </div>
         <div class="new_title">
           <%= link_to new_article.title, "/articles/#{new_article.id}" %>
@@ -30,7 +30,7 @@
     <% @articles.each do |article| %>
     <div id="content">
       <div id="picture">
-        <%= image_tag article.picture.url, :size => "300x200" %>
+        <%= image_tag article.picture.to_s, :size => "300x200" %>
       </div>
       <div id="title">
         <%= link_to article.title, article %>
@@ -48,7 +48,7 @@
   </div>
 </div>
 <br>
-
+<%= link_to 'New Article', new_article_path %>
 <% if @current_user %>
   <%= link_to 'New Article', new_article_path %>
   <%= link_to"ログアウト", "/logout", {method: :post} %>
