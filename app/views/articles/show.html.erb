@@ -35,7 +35,7 @@
       <%= image_tag @article.picture.to_s, :size => "600x450" %>
     </div>
     <div id="article_text">
-      <%= @article.text %>
+      <%= simple_format(@article.text) %>
     </div>
     <% if @before_article %>
       <p class = "show_btn before"><%= link_to '＜前の記事', "/articles/#{@before_article.id}" %></p>

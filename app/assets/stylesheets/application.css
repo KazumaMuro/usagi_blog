@@ -28,6 +28,10 @@ li{
   list-style: none;
 }
 
+.usagi{
+  width: 600px;
+  height: 300px;
+}
 /* title */
 
 #main_title{
